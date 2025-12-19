@@ -4,9 +4,28 @@ __lua__
 ----------------
 -- flappy bub --
 ----------------
+function _init()
+    POSITION_X=55
+    POSITION_Y=55
+end
 
--- 3, 8
+function draw_bub()
+    spr(1,POSITION_X,POSITION_Y)
+    spr(2,POSITION_X+8,POSITION_Y)
+    spr(17,POSITION_X,POSITION_Y+8)
+    spr(18,POSITION_X+8,POSITION_Y+8)
+end
 
+function _update60()
+    if btn(➡️) then
+       POSITION_X+=1 
+    end
+end
+
+function _draw()
+    cls()
+    draw_bub()
+end
 
 __gfx__
 0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000eeeeeeeee0eee0eee0e0e0e0000e000e00000000
