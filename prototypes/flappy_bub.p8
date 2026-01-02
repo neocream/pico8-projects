@@ -5,20 +5,26 @@ __lua__
 -- flappy bub --
 ----------------
 function _init()
-    POSITION_X=55
-    POSITION_Y=55
+    player = {
+        sprite1=1,
+        sprite2=2,
+        sprite3=17,
+        sprite4=18,
+        position_x=55,
+        position_y=55
+    }
 end
 
 function draw_bub()
-    spr(1,POSITION_X,POSITION_Y)
-    spr(2,POSITION_X+8,POSITION_Y)
-    spr(17,POSITION_X,POSITION_Y+8)
-    spr(18,POSITION_X+8,POSITION_Y+8)
+    spr(player.sprite1,player.position_x,player.position_y)
+    spr(player.sprite2,player.position_x+8,player.position_y)
+    spr(player.sprite3,player.position_x,player.position_y+8)
+    spr(player.sprite4,player.position_x+8,player.position_y+8)
 end
 
 function _update60()
     if btn(➡️) then
-       POSITION_X+=1 
+       player.position_x+=1
     end
 end
 
